@@ -1,7 +1,7 @@
 <h1>Agregar Producto</h1>
 <hr>
 
-<form action="">
+<form [formGroup]="myForm">
 
   <div class="row g-3 align-items-center mb-3">
 
@@ -10,21 +10,26 @@
     </div>
 
     <div class="col-auto">
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" formControlName="name">
     </div>
 
     <div class="col-auto">
-      <span>Algo de información</span>
+      <!-- Directiva personalizada -->
+      <span customLabel></span>
     </div>
 
   </div>
 
   <div class="row">
     <div class="col">
-      <button class="btn btn-primary">
+      <button class="btn btn-primary" (click)="changeColor()">
         Cambiar color
       </button>
     </div>
   </div>
 
 </form>
+
+<p class="mt-5">Errores:</p>
+<pre>{{ myForm.get('name')?.errors | json }}</pre>
+<p>Color: {{ color }}</p>
