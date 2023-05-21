@@ -17,6 +17,8 @@
       (input)="onFieldUpdated( 'last_name', txtLastName.value )"
       [value]="user().last_name">
 
+      <button class="btn btn-primary" (click)="increaseBy(+1)"> + 1 </button>
+
   </div>
 
   <div class="col-6">
